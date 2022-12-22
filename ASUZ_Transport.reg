@@ -1,0 +1,15 @@
+Windows Registry Editor Version 5.00
+
+[HKEY_CLASSES_ROOT\s2x]
+@="SalesLogix Protocol Handler"
+"URL Protocol"="s2x"
+
+[HKEY_CLASSES_ROOT\s2x\DefaultIcon]
+@="D:\\AZUS_Transport.exe"
+
+[HKEY_CLASSES_ROOT\s2x\shell]
+
+[HKEY_CLASSES_ROOT\s2x\shell\open]
+
+[HKEY_CLASSES_ROOT\s2x\shell\open\command]
+@="\"D:\\AZUS_Transport.exe\" %1"

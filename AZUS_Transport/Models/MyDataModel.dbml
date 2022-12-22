@@ -1,0 +1,259 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="ASUZ_Transport_DB" Class="MyDataModelDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\Properties\DataSources\ASUZ_Transport_DB.mdf;Integrated Security=True" SettingsObjectName="AZUS_Transport.Properties.Settings" SettingsPropertyName="ASUZ_Transport_DBConnectionString1" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.Applications" Member="Applications">
+    <Type Name="Applications">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="UserID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="CPC" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="IntercityСity" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="PurposeUsingTransport" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="Days" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="StartDate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="EndDate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="DateCreation" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="TypeCarID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="QuantityPassengers" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="CargoWeight" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="CarID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="PlaceSubmission" Type="System.String" DbType="VarChar(300) NOT NULL" CanBeNull="false" />
+      <Column Name="Route" Type="System.String" DbType="VarChar(300) NOT NULL" CanBeNull="false" />
+      <Column Name="CommentClient" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="СommentDirector" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="СommentEconomist" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="СommentDepartment" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="СommentDispatcherNIIAR" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="СommentDispatcherATA" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="DirectorStatusDoneID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="EconomistStatusDoneID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="DepartmentStatusDoneID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="DispatcherNIIAR_StatusDoneID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="DispatcherATA_StatusDoneID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="SelectionApplicationJoin" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="ApplicationJoin" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Association Name="Cars_Applications" Member="Cars" ThisKey="CarID" OtherKey="Id" Type="Cars" IsForeignKey="true" />
+      <Association Name="StatusesDone_Applications" Member="StatusesDone" ThisKey="DirectorStatusDoneID" OtherKey="Id" Type="StatusesDone" IsForeignKey="true" />
+      <Association Name="StatusesDone_Applications1" Member="StatusesDone1" ThisKey="EconomistStatusDoneID" OtherKey="Id" Type="StatusesDone" IsForeignKey="true" />
+      <Association Name="StatusesDone_Applications2" Member="StatusesDone2" ThisKey="DispatcherNIIAR_StatusDoneID" OtherKey="Id" Type="StatusesDone" IsForeignKey="true" />
+      <Association Name="StatusesDone_Applications3" Member="StatusesDone3" ThisKey="DepartmentStatusDoneID" OtherKey="Id" Type="StatusesDone" IsForeignKey="true" />
+      <Association Name="StatusesDone_Applications4" Member="StatusesDone4" ThisKey="DispatcherATA_StatusDoneID" OtherKey="Id" Type="StatusesDone" IsForeignKey="true" />
+      <Association Name="TypeCars_Applications" Member="TypeCars" ThisKey="TypeCarID" OtherKey="Id" Type="TypeCars" IsForeignKey="true" />
+      <Association Name="Users_Applications" Member="Users" ThisKey="UserID" OtherKey="Id" Type="Users" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Cars" Member="Cars">
+    <Type Name="Cars">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="TypeCarID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ModelCarID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="RegisterSign" Type="System.String" DbType="NVarChar(30) NOT NULL" CanBeNull="false" />
+      <Column Name="StatusCarID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ImageMimeType" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Association Name="Cars_Applications" Member="Applications" ThisKey="Id" OtherKey="CarID" Type="Applications" />
+      <Association Name="ModelCars_Cars" Member="ModelCars" ThisKey="ModelCarID" OtherKey="Id" Type="ModelCars" IsForeignKey="true" />
+      <Association Name="StatusCars_Cars" Member="StatusCars" ThisKey="StatusCarID" OtherKey="Id" Type="StatusCars" IsForeignKey="true" />
+      <Association Name="TypeCars_Cars" Member="TypeCars" ThisKey="TypeCarID" OtherKey="Id" Type="TypeCars" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Divisions" Member="Divisions">
+    <Type Name="Divisions">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="VarChar(200) NOT NULL" CanBeNull="false" />
+      <Column Name="Building" Type="System.String" DbType="VarChar(30) NOT NULL" CanBeNull="false" />
+      <Association Name="Divisions_Users" Member="Users" ThisKey="Id" OtherKey="DivisionID" Type="Users" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ModelCars" Member="ModelCars">
+    <Type Name="ModelCars">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Association Name="ModelCars_Cars" Member="Cars" ThisKey="Id" OtherKey="ModelCarID" Type="Cars" />
+    </Type>
+  </Table>
+  <Table Name="dbo.StatusCars" Member="StatusCars">
+    <Type Name="StatusCars">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Association Name="StatusCars_Cars" Member="Cars" ThisKey="Id" OtherKey="StatusCarID" Type="Cars" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Statuses" Member="Statuses">
+    <Type Name="Statuses">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Association Name="Statuses_Users" Member="Users" ThisKey="Id" OtherKey="StatusID" Type="Users" />
+    </Type>
+  </Table>
+  <Table Name="dbo.StatusesDone" Member="StatusesDone">
+    <Type Name="StatusesDone">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Association Name="StatusesDone_Applications" Member="Applications" ThisKey="Id" OtherKey="DirectorStatusDoneID" Type="Applications" />
+      <Association Name="StatusesDone_Applications1" Member="Applications1" ThisKey="Id" OtherKey="EconomistStatusDoneID" Type="Applications" />
+      <Association Name="StatusesDone_Applications2" Member="Applications2" ThisKey="Id" OtherKey="DispatcherNIIAR_StatusDoneID" Type="Applications" />
+      <Association Name="StatusesDone_Applications3" Member="Applications3" ThisKey="Id" OtherKey="DepartmentStatusDoneID" Type="Applications" />
+      <Association Name="StatusesDone_Applications4" Member="Applications4" ThisKey="Id" OtherKey="DispatcherATA_StatusDoneID" Type="Applications" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TypeCars" Member="TypeCars">
+    <Type Name="TypeCars">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Association Name="TypeCars_Applications" Member="Applications" ThisKey="Id" OtherKey="TypeCarID" Type="Applications" />
+      <Association Name="TypeCars_Cars" Member="Cars" ThisKey="Id" OtherKey="TypeCarID" Type="Cars" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Users" Member="Users">
+    <Type Name="Users">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Username" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Password" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Email" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="SurName" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Partonymic" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Post" Type="System.String" DbType="VarChar(200) NOT NULL" CanBeNull="false" />
+      <Column Name="DivisionID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Room" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="WorkPhone" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="MobilePhone" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="StatusID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="Users_Applications" Member="Applications" ThisKey="Id" OtherKey="UserID" Type="Applications" />
+      <Association Name="Divisions_Users" Member="Divisions" ThisKey="DivisionID" OtherKey="Id" Type="Divisions" IsForeignKey="true" />
+      <Association Name="Statuses_Users" Member="Statuses" ThisKey="StatusID" OtherKey="Id" Type="Statuses" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ApplicationAgreedView" Member="ApplicationAgreedView">
+    <Type Name="ApplicationAgreedView">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Client" Type="System.String" DbType="VarChar(152) NOT NULL" CanBeNull="false" />
+      <Column Name="Email" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Post" Type="System.String" DbType="VarChar(200) NOT NULL" CanBeNull="false" />
+      <Column Name="Division" Type="System.String" DbType="VarChar(200) NOT NULL" CanBeNull="false" />
+      <Column Name="Building" Type="System.String" DbType="VarChar(30) NOT NULL" CanBeNull="false" />
+      <Column Name="Room" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Director" Type="System.String" DbType="VarChar(152) NOT NULL" CanBeNull="false" />
+      <Column Name="Economist" Type="System.String" DbType="VarChar(152) NOT NULL" CanBeNull="false" />
+      <Column Name="CPC" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="IntercityСity" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="PurposeUsingTransport" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="DaysWorkerOrWeekend" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="WorkPhone" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="MobilePhone" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="DateCreation" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="StartDate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="EndDate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="TypeCar" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Model" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="RegisterSign" Type="System.String" DbType="NVarChar(30) NOT NULL" CanBeNull="false" />
+      <Column Name="QuantityPassengers" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="CargoWeight" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="PlaceSubmission" Type="System.String" DbType="VarChar(300) NOT NULL" CanBeNull="false" />
+      <Column Name="Route" Type="System.String" DbType="VarChar(300) NOT NULL" CanBeNull="false" />
+      <Column Name="CommentClient" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="СommentDirector" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="СommentEconomist" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="СommentDepartment" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="СommentDispatcherNIIAR" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="СommentDispatcherATA" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="DirectorStatusDone" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="EconomistStatusDone" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="DepartmentStatusDone" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="DispatcherNIIAR_StatusDone" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="DispatcherATA_StatusDone" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="SelectionApplicationJoin" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="ApplicationJoin" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ApplicationView" Member="ApplicationView">
+    <Type Name="ApplicationView">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Client" Type="System.String" DbType="VarChar(152) NOT NULL" CanBeNull="false" />
+      <Column Name="Email" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Post" Type="System.String" DbType="VarChar(200) NOT NULL" CanBeNull="false" />
+      <Column Name="Division" Type="System.String" DbType="VarChar(200) NOT NULL" CanBeNull="false" />
+      <Column Name="Building" Type="System.String" DbType="VarChar(30) NOT NULL" CanBeNull="false" />
+      <Column Name="Room" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Director" Type="System.String" DbType="VarChar(152) NOT NULL" CanBeNull="false" />
+      <Column Name="Economist" Type="System.String" DbType="VarChar(152) NOT NULL" CanBeNull="false" />
+      <Column Name="CPC" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="IntercityСity" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="PurposeUsingTransport" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="DaysWorkerOrWeekend" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="WorkPhone" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="MobilePhone" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="DateCreation" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="StartDate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="EndDate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="TypeCar" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="QuantityPassengers" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="CargoWeight" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="PlaceSubmission" Type="System.String" DbType="VarChar(300) NOT NULL" CanBeNull="false" />
+      <Column Name="Route" Type="System.String" DbType="VarChar(300) NOT NULL" CanBeNull="false" />
+      <Column Name="CommentClient" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="СommentDirector" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="СommentEconomist" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="СommentDepartment" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="СommentDispatcherNIIAR" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="СommentDispatcherATA" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="DirectorStatusDone" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="EconomistStatusDone" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="DepartmentStatusDone" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="DispatcherNIIAR_StatusDone" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="DispatcherATA_StatusDone" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="SelectionApplicationJoin" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="ApplicationJoin" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.CarModelView" Member="CarModelView">
+    <Type Name="CarModelView">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="TypeCar" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Model" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="RegisterSign" Type="System.String" DbType="NVarChar(30) NOT NULL" CanBeNull="false" />
+      <Column Name="StatusCar" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="ImageData" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.CarView" Member="CarView">
+    <Type Name="CarView">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="TypeCar" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Model" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="RegisterSign" Type="System.String" DbType="NVarChar(30) NOT NULL" CanBeNull="false" />
+      <Column Name="StatusCar" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ModelCarView" Member="ModelCarView">
+    <Type Name="ModelCarView">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Model" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.DivisionView" Member="DivisionView">
+    <Type Name="DivisionView">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Division" Type="System.String" DbType="VarChar(200) NOT NULL" CanBeNull="false" />
+      <Column Name="Building" Type="System.String" DbType="VarChar(30) NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TypeCarView" Member="TypeCarView">
+    <Type Name="TypeCarView">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="TypeCar" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.UserView" Member="UserView">
+    <Type Name="UserView">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Email" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Customer" Type="System.String" DbType="VarChar(152) NOT NULL" CanBeNull="false" />
+      <Column Name="Post" Type="System.String" DbType="VarChar(200) NOT NULL" CanBeNull="false" />
+      <Column Name="Division" Type="System.String" DbType="VarChar(200) NOT NULL" CanBeNull="false" />
+      <Column Name="Building" Type="System.String" DbType="VarChar(30) NOT NULL" CanBeNull="false" />
+      <Column Name="Room" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="WorkPhone" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="MobilePhone" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Status" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+</Database>
