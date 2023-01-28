@@ -25,5 +25,5 @@
 <hr/>
 <h2 align="center">Выбор транспорта</h2>
 <p align="center">
-  <a href="https://github.com/kontr24/AZUS_Transport"><img src="https://github.com/kontr24/AZUS_Transport/blob/01586821c504e34d43bf6d26bf37d18198b56721/ScreenshotsApplication/CarsForm.png"></img></a>
+  <a href="https://github.com/kontr24/AZUS_Transport"><img src="https://github.com/kontr24/AZUS_Transport/blob/12b23f4a3af929d6f5948fcc1dba561a58366a6d/ScreenshotsApplication/ChoiceCar.png"></img></a>
 </p>
