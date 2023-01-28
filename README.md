@@ -5,7 +5,7 @@
 <hr/>
 <h2 align="center">Вход</h2>
 <p align="center">
-  <a href="https://github.com/kontr24/AZUS_Transport"><img src="https://github.com/kontr24/AZUS_Transport/blob/1f84d6df804ca986aebed12fe91bdbf335c6bdaa/ScreenshotsApplication/Exit.png"></img></a>
+  <a href="https://github.com/kontr24/AZUS_Transport"><img src="https://github.com/kontr24/AZUS_Transport/blob/717665efcbd25153994dbe44514b8621600396dd/ScreenshotsApplication/Entrance.png"></img></a>
 </p>
 <hr/>
 <h2 align="center">Главная форма</h2>
