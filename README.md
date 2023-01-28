@@ -3,7 +3,7 @@
 На базе MS SQL(Продукт: Microsoft SQL Server Express. Версия: 15.0.2000.5. SQL Server Management Studio: 15.0.18390.0): https://cloud.mail.ru/public/C9xW/WdGrCeFdZ  
 На базе MySQL: https://cloud.mail.ru/public/aeJE/hqaKEjenU
 # Изображения
-<h4 align="center">Вход</h4>
+<h2 align="center">Вход</h2>
 <p align="center">
   <a href="https://github.com/kontr24/AZUS_Transport"><img src="https://github.com/kontr24/AZUS_Transport/blob/1f84d6df804ca986aebed12fe91bdbf335c6bdaa/ScreenshotsApplication/Exit.png"></img></a>
 </p>
