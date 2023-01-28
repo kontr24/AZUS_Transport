@@ -4,6 +4,6 @@
 На базе MySQL: https://cloud.mail.ru/public/aeJE/hqaKEjenU
 # Изображения
 <p align="center">
-  <br />Вход
+  <div>Вход</div>
   <a href="https://github.com/kontr24/AZUS_Transport"><img src="https://github.com/kontr24/AZUS_Transport/blob/d8fcf503fa45aee5527d6e3924b1266838ca5f72/Exit.png"></img></a>
 </p>
