@@ -5,5 +5,5 @@
 # Изображения
 <div align="center">Вход</div>
 <p align="center">
-  <a href="https://github.com/kontr24/AZUS_Transport"><img src="https://github.com/kontr24/AZUS_Transport/blob/d8fcf503fa45aee5527d6e3924b1266838ca5f72/Exit.png"></img></a>
+  <a href="https://github.com/kontr24/AZUS_Transport"><img src="https://github.com/kontr24/AZUS_Transport/blob/1f84d6df804ca986aebed12fe91bdbf335c6bdaa/ScreenshotsApplication/Exit.png"></img></a>
 </p>
