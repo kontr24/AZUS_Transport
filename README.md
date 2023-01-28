@@ -5,5 +5,5 @@
 # Изображения
 <p align="center">
   <br />Вход
-  <a href="https://github.com/kontr24/AZUS_Transport"><img src="https://thumb.cloud.mail.ru/thumb/xw1/Скриншот%2028-01-2023%20190307.png"></img></a>
+  <a href="https://github.com/kontr24/AZUS_Transport"><img src="https://pasteboard.co/JRkTriYL50Uz.png"></img></a>
 </p>
