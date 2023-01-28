@@ -15,5 +15,5 @@
 <hr/>
 <h2 align="center">Форма "Пользователи"</h2>
 <p align="center">
-  <a href="https://github.com/kontr24/AZUS_Transport"><img src="https://github.com/kontr24/AZUS_Transport/blob/6f83e66f6e08db8dab72aa3d2280940b34f0ccea/ScreenshotsApplication/MainForm.png"></img></a>
+  <a href="https://github.com/kontr24/AZUS_Transport"><img src="https://github.com/kontr24/AZUS_Transport/blob/ec191c74f26d742f6cdf255dbc76584e8f905d29/ScreenshotsApplication/UsersForm.png"></img></a>
 </p>
